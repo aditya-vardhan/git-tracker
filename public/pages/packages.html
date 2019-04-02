@@ -1,0 +1,20 @@
+<div>
+  <a href="#!">Home</a>
+  
+  <table class="table table-bordered" ng-if="apps">
+    <thead>
+      <tr>
+        <th>Package</th>
+        <th>Dependents Size</th>
+        <th>Dependents</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="gitApp in apps">
+        <td>{{ gitApp.name }}</td>
+        <td>{{ gitApp.length }}</td>
+        <td>{{ gitApp.dependents.join(', ') }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

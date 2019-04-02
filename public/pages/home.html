@@ -1,0 +1,66 @@
+
+<!-- SET THE CONTROLLER -->
+	<div class="container">
+
+		<div class="text-center">
+      <h1>Search apps <span class="label label-info">{{ apps.length }}</span></h1>
+      <a href="#!packages">Packages</a>
+		</div>
+
+		<!-- FORM TO SEARCH APPS -->
+		<div id="gitApp-form" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<form>
+					<div class="form-group">
+
+						<!-- BIND THIS VALUE TO searchText IN ANGULAR -->
+						<input type="text" class="form-control input-lg text-center" placeholder="Get the list of popular apps for this search text" ng-model="searchText">
+					</div>
+
+					<!-- createToDo() WILL CREATE NEW TODOS -->
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="searchApps()">Search</button>
+				</form>
+			</div>
+    </div>
+    
+
+		<!-- Apps LIST -->
+		<div id="gitApp-list" class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+
+
+				<p class="text-center" ng-show="loading">
+					<span class="fa fa-spinner fa-spin fa-3x"></span>
+				</p>
+				
+        <table class="table table-bordered" ng-if="apps">
+          <thead>
+            <tr>
+              <th>App name</th>
+              <th>Full name</th>
+              <th>Stars</th>
+              <th>Forks</th>
+              <th>Import Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="gitApp in apps" ng-class="{success: myAppIds.includes(gitApp.id)}">
+              <td>{{ gitApp.name }}</td>
+              <td>{{ gitApp.full_name }}</td>
+              <td>{{ gitApp.stargazers_count }}</td>
+              <td>{{ gitApp.forks }}</td>
+              <td>
+                <input type="checkbox" ng-disabled = myAppIds.includes(gitApp.id)
+                  ng-checked="myAppIds.includes(gitApp.id)"
+                  ng-click="importApp(gitApp.id, gitApp.full_name)">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+			</div>
+		</div>
+
+	
+	</div>
+

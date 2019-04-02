@@ -1,0 +1,36 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="gitApp">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Node/Angular App App</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		html 					{ overflow-y:scroll; }
+		body 					{ padding-top:50px; }
+		#gitApp-list 				{ margin-bottom:30px; }
+		#gitApp-form 	 			{ margin-bottom:50px; }
+	</style>
+
+	<!-- SPELLS -->
+	
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script src="js/services/httpService.js"></script> <!-- load our http service -->
+<script src="js/core.js"></script> <!-- load our main application -->
+<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/controllers/packages.js"></script>
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-view>
+
+</body>
+</html>
